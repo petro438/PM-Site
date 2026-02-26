@@ -1,0 +1,11 @@
+{
+  "bucketWeights": {
+    "educational": 0.50,
+    "topical": 0.35,
+    "affiliate": 0.15
+  },
+  "maxArticlesPerRun": 3,
+  "minScoreThreshold": 0.3,
+  "lastUpdated": "2026-02-26T00:00:00Z",
+  "notes": "Initial config. Educational heavy to build foundation. Agent's learn module will adjust weights over time based on GSC performance data."
+}

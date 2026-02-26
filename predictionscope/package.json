@@ -1,0 +1,32 @@
+{
+  "name": "predictionscope",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd site && next dev",
+    "build": "cd site && next build",
+    "start": "cd site && next start",
+    "agent": "npx tsx agent/index.ts",
+    "agent:seed": "npx tsx scripts/seed-content.ts",
+    "agent:learn": "npx tsx agent/learn.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@octokit/rest": "^21.0.0",
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "remark": "^15.0.0",
+    "remark-html": "^16.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

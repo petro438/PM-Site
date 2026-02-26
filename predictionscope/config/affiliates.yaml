@@ -1,0 +1,164 @@
+# PredictionScope Affiliate Configuration
+# Update promo codes and offers regularly — stale promos kill trust.
+# Last verified: [DATE]
+
+platforms:
+  kalshi:
+    name: "Kalshi"
+    description: "CFTC-regulated prediction market exchange"
+    url: "https://kalshi.com"
+    affiliate_base_url: "https://kalshi.com/?ref=predictionscope"  # Replace with actual affiliate link
+    promo_code: ""  # Add when available
+    promo_details: ""
+    commission_type: "CPA"  # CPA | revenue_share
+    commission_value: ""  # Fill in from affiliate agreement
+    pros:
+      - "CFTC-regulated, fully legal in the US"
+      - "Wide range of event categories"
+      - "Clean, intuitive interface"
+      - "Real-money trading with USD"
+      - "Mobile app available"
+    cons:
+      - "US-only (for now)"
+      - "Fees on trades"
+      - "Less liquidity than Polymarket on some markets"
+    categories: ["politics", "economics", "climate", "culture", "sports"]
+    min_deposit: "$1"
+    withdrawal_methods: ["Bank transfer", "Wire"]
+    verified: false  # Set true after confirming affiliate agreement
+    priority: 1  # Primary affiliate partner
+
+  polymarket:
+    name: "Polymarket"
+    description: "Crypto-based prediction market platform"
+    url: "https://polymarket.com"
+    affiliate_base_url: "https://polymarket.com/?ref=predictionscope"  # Replace
+    promo_code: ""
+    promo_details: ""
+    commission_type: "revenue_share"
+    commission_value: ""
+    pros:
+      - "Highest liquidity on most markets"
+      - "No KYC required for small amounts"
+      - "Wide variety of markets"
+      - "Active community and social features"
+    cons:
+      - "Crypto-only (USDC)"
+      - "Regulatory uncertainty in US"
+      - "Requires crypto wallet setup"
+    categories: ["politics", "crypto", "sports", "culture", "AI"]
+    min_deposit: "Varies (crypto)"
+    withdrawal_methods: ["Crypto wallet"]
+    verified: false
+    priority: 2
+
+  robinhood:
+    name: "Robinhood"
+    description: "Stock trading app with prediction market contracts"
+    url: "https://robinhood.com"
+    affiliate_base_url: ""  # Set up when available
+    promo_code: ""
+    promo_details: ""
+    commission_type: "CPA"
+    commission_value: ""
+    pros:
+      - "Already have an account if you trade stocks"
+      - "Familiar, mainstream interface"
+      - "US-regulated"
+    cons:
+      - "Limited market selection"
+      - "Newer to prediction markets"
+    categories: ["politics", "economics"]
+    verified: false
+    priority: 3
+
+  crypto_com:
+    name: "Crypto.com"
+    description: "Crypto exchange with prediction market features"
+    url: "https://crypto.com"
+    affiliate_base_url: ""
+    promo_code: ""
+    promo_details: ""
+    commission_type: "CPA"
+    commission_value: ""
+    pros:
+      - "Large existing user base"
+      - "Bonuses and promotions"
+      - "Mobile-first experience"
+    cons:
+      - "Crypto ecosystem can be confusing for beginners"
+      - "Limited prediction market selection vs. specialists"
+    categories: ["crypto", "politics", "sports"]
+    verified: false
+    priority: 4
+
+# Affiliate content templates
+affiliate_pages:
+  - slug: "best-prediction-market-apps"
+    title: "Best Prediction Market Apps in 2026"
+    platforms: ["kalshi", "polymarket", "robinhood", "crypto_com"]
+    refresh_frequency: "biweekly"
+    target_keywords:
+      - "best prediction market apps"
+      - "best prediction market platforms"
+      - "prediction market apps"
+      - "top prediction market sites"
+
+  - slug: "kalshi-review"
+    title: "Kalshi Review 2026: Is It Worth It?"
+    platforms: ["kalshi"]
+    refresh_frequency: "monthly"
+    target_keywords:
+      - "kalshi review"
+      - "is kalshi legit"
+      - "kalshi pros and cons"
+
+  - slug: "polymarket-review"
+    title: "Polymarket Review 2026: Complete Guide"
+    platforms: ["polymarket"]
+    refresh_frequency: "monthly"
+    target_keywords:
+      - "polymarket review"
+      - "is polymarket safe"
+      - "polymarket how to use"
+
+  - slug: "kalshi-vs-polymarket"
+    title: "Kalshi vs Polymarket: Which Is Better?"
+    platforms: ["kalshi", "polymarket"]
+    refresh_frequency: "monthly"
+    target_keywords:
+      - "kalshi vs polymarket"
+      - "polymarket vs kalshi"
+      - "best prediction market"
+
+  - slug: "kalshi-promo-code"
+    title: "Kalshi Promo Code & Sign-Up Bonus (2026)"
+    platforms: ["kalshi"]
+    refresh_frequency: "weekly"
+    target_keywords:
+      - "kalshi promo code"
+      - "kalshi bonus"
+      - "kalshi sign up offer"
+
+  - slug: "polymarket-sign-up"
+    title: "How to Sign Up for Polymarket (Step-by-Step)"
+    platforms: ["polymarket"]
+    refresh_frequency: "monthly"
+    target_keywords:
+      - "polymarket sign up"
+      - "how to use polymarket"
+      - "polymarket account"
+
+# Disclosure requirements
+disclosures:
+  affiliate_disclosure: |
+    PredictionScope may earn a commission when you sign up for a prediction market
+    platform through our links. This doesn't affect our editorial recommendations
+    or the price you pay. We only recommend platforms we've personally used and
+    believe offer genuine value.
+  
+  risk_disclosure: |
+    Prediction markets involve risk. You can lose money trading on prediction
+    market platforms. Never trade more than you can afford to lose. This content
+    is for informational purposes only and should not be considered financial
+    or investment advice.

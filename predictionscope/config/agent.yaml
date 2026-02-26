@@ -1,0 +1,178 @@
+# PredictionScope Agent Configuration
+# Controls the autonomous agent's behavior, content planning, and guardrails.
+
+agent:
+  name: "PredictionScope Agent"
+  model: "claude-sonnet-4-20250514"
+  schedule: "daily"  # daily | twice-daily | hourly
+  max_articles_per_run: 5
+  min_articles_per_run: 1
+  dry_run: false  # If true, generates content but doesn't queue for publish
+
+# Content bucket configuration
+# Weights control how the agent distributes effort across buckets.
+# Phase 1: Heavy educational, moderate topical, light affiliate.
+# Phase 2: Shift toward topical + affiliate as authority builds.
+content_buckets:
+  learn:
+    weight: 0.50  # 50% of content in phase 1
+    min_word_count: 1200
+    max_word_count: 2500
+    refresh_interval_days: 30  # Revisit/update existing content
+    target_count: 60  # Total educational articles to build toward
+    priority: "high"  # Always prioritize gaps in educational foundation
+    seo:
+      target_intent: "informational"
+      schema_types: ["Article", "FAQPage"]
+  
+  markets:
+    weight: 0.35  # 35% of content
+    min_word_count: 800
+    max_word_count: 1800
+    freshness_window_days: 7  # Content older than this gets deprioritized
+    max_per_day: 3
+    priority: "medium"
+    seo:
+      target_intent: "informational"
+      schema_types: ["Article", "LiveBlogPosting"]
+    triggers:
+      - price_move_threshold: 0.15  # 15%+ move triggers content
+      - new_market_volume_min: 50000  # New markets with $50k+ volume
+      - event_days_until: 7  # Events within 7 days
+  
+  best:
+    weight: 0.15  # 15% of content in phase 1
+    min_word_count: 1500
+    max_word_count: 3000
+    refresh_interval_days: 14
+    target_count: 15  # Core affiliate pages
+    priority: "low"  # Build these after educational foundation exists
+    seo:
+      target_intent: "commercial"
+      schema_types: ["Article", "Product"]
+
+# Data sources
+data_sources:
+  kalshi:
+    api_base: "https://api.elections.kalshi.com/trade-api/v2"
+    categories:
+      - "politics"
+      - "economics"
+      - "entertainment"
+      - "science"
+      - "climate"
+    snapshot_interval: "daily"
+
+  polymarket:
+    api_base: "https://clob.polymarket.com"
+    min_liquidity: 10000  # Only track markets with $10k+ liquidity
+    snapshot_interval: "daily"
+
+  google_trends:
+    enabled: true
+    categories:
+      - "prediction market"
+      - "kalshi"
+      - "polymarket"
+      - "odds of"
+
+# Brand voice and content guardrails
+brand:
+  voice: |
+    PredictionScope is authoritative but accessible. We explain prediction markets
+    to people who may have never heard of them, using cultural events they already
+    care about as the entry point. Tone is confident, data-forward, and slightly
+    irreverent — we're not a financial publication, but we're not BuzzFeed either.
+    Think: a smart friend who's really into prediction markets explaining why you
+    should care about them.
+  
+  guidelines:
+    - "Always include real, current odds data — never fabricate numbers"
+    - "Explain prediction market mechanics naturally, don't assume knowledge"
+    - "Use market data to tell stories, not just report numbers"
+    - "Link to educational content whenever introducing PM concepts"
+    - "Affiliate content must be genuinely useful, not just promotional"
+    - "Never frame prediction markets as investment advice"
+    - "Note that prediction markets involve risk of loss"
+    - "Be transparent that affiliate links are affiliate links"
+  
+  forbidden:
+    - "Investment advice or return projections"
+    - "Claims about guaranteed outcomes"
+    - "Content about individual minors"
+    - "Misleading promo code information"
+    - "Content that could be construed as market manipulation"
+
+# Internal linking rules
+linking:
+  max_internal_links_per_article: 8
+  min_internal_links_per_article: 2
+  always_link_to:
+    - "/learn/what-are-prediction-markets"
+    - "/learn/how-prediction-markets-work"
+    - "/best/prediction-market-apps"
+  link_strategy: |
+    Every topical article should link to at least one educational article
+    and one affiliate page. Educational articles should interlink with
+    related educational content. Affiliate pages should link to educational
+    content that explains the concepts they reference.
+
+# Review/approval workflow
+review:
+  mode: "pr"  # pr (GitHub PR) | slack | email
+  auto_approve: false  # Never auto-publish without human review
+  notification_channel: "slack"  # Where to notify when drafts are ready
+  feedback_loop: true  # Log rejection reasons to improve future content
+
+# Performance monitoring
+monitoring:
+  google_search_console:
+    check_interval: "daily"
+    alert_thresholds:
+      impressions_drop: 0.30  # Alert if impressions drop 30%+
+      index_failure_days: 7  # Alert if page not indexed after 7 days
+  
+  metrics_to_track:
+    - "pages_indexed"
+    - "organic_impressions"
+    - "organic_clicks"
+    - "average_position"
+    - "click_through_rate"
+    - "affiliate_clicks"  # Track via UTM parameters
+
+# Phases - the agent adjusts behavior over time
+phases:
+  phase_1:
+    name: "Foundation"
+    duration_weeks: 8
+    focus: "Build educational content library and topical authority"
+    content_mix:
+      learn: 0.55
+      markets: 0.35
+      best: 0.10
+    success_criteria:
+      - "40+ educational articles published"
+      - "50+ total pages indexed"
+      - "Any organic impressions in GSC"
+
+  phase_2:
+    name: "Growth"
+    starts_after: "phase_1 success criteria met"
+    focus: "Scale topical content, activate affiliate pages"
+    content_mix:
+      learn: 0.25
+      markets: 0.50
+      best: 0.25
+    success_criteria:
+      - "100+ pages indexed"
+      - "1000+ monthly organic impressions"
+      - "Any affiliate clicks"
+
+  phase_3:
+    name: "Monetization"
+    starts_after: "phase_2 success criteria met"
+    focus: "Optimize for conversions, build tools/products"
+    content_mix:
+      learn: 0.15
+      markets: 0.55
+      best: 0.30

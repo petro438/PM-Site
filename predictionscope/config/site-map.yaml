@@ -1,0 +1,119 @@
+# PredictionScope Content Map
+# Tracks all planned and published content across buckets.
+# The agent updates this file as content is created and published.
+# Status: planned | draft | review | published | archived
+
+last_updated: null
+
+content:
+  # ─── EDUCATIONAL FOUNDATION ─────────────────────────────────
+  learn:
+    # Tier 1: Must-have pages (build these first)
+    - slug: what-are-prediction-markets
+      title: "What Are Prediction Markets? A Complete Guide"
+      status: planned
+      priority: 10
+      internal_links_to: [how-prediction-markets-work, are-prediction-markets-legal]
+      
+    - slug: how-prediction-markets-work
+      title: "How Do Prediction Markets Work?"
+      status: planned
+      priority: 10
+      internal_links_to: [what-are-prediction-markets, how-to-read-prediction-market-odds]
+      
+    - slug: are-prediction-markets-legal
+      title: "Are Prediction Markets Legal in the US?"
+      status: planned
+      priority: 9
+      internal_links_to: [cftc-prediction-markets, what-is-kalshi]
+      
+    - slug: what-is-kalshi
+      title: "What Is Kalshi? Everything You Need to Know"
+      status: planned
+      priority: 9
+      internal_links_to: [what-are-prediction-markets, kalshi-review]
+      
+    - slug: what-is-polymarket
+      title: "What Is Polymarket? A Beginner's Guide"
+      status: planned
+      priority: 9
+      internal_links_to: [what-are-prediction-markets, polymarket-review]
+      
+    # Tier 2: Important supporting content
+    - slug: how-to-read-prediction-market-odds
+      title: "How to Read Prediction Market Odds"
+      status: planned
+      priority: 8
+      
+    - slug: prediction-markets-vs-polls
+      title: "Prediction Markets vs. Polls: Which Is More Accurate?"
+      status: planned
+      priority: 8
+      
+    - slug: prediction-markets-vs-sports-betting
+      title: "Prediction Markets vs. Sports Betting: Key Differences"
+      status: planned
+      priority: 7
+      
+    - slug: prediction-market-taxes
+      title: "Prediction Market Taxes: What You Need to Know"
+      status: planned
+      priority: 7
+      
+    - slug: prediction-market-strategies
+      title: "Prediction Market Trading Strategies for Beginners"
+      status: planned
+      priority: 7
+      
+    - slug: cftc-prediction-markets
+      title: "CFTC and Prediction Markets: Regulation Explained"
+      status: planned
+      priority: 6
+      
+    - slug: prediction-markets-history
+      title: "History of Prediction Markets: From Iowa to Kalshi"
+      status: planned
+      priority: 6
+      
+    - slug: prediction-market-arbitrage
+      title: "Prediction Market Arbitrage: How It Works"
+      status: planned
+      priority: 5
+
+  # ─── AFFILIATE PAGES ────────────────────────────────────────
+  best:
+    - slug: prediction-market-apps
+      title: "Best Prediction Market Apps in 2026"
+      status: planned
+      priority: 9
+      
+    - slug: kalshi-review
+      title: "Kalshi Review 2026: Is It Worth It?"
+      status: planned
+      priority: 8
+      
+    - slug: polymarket-review
+      title: "Polymarket Review 2026: Complete Guide"
+      status: planned
+      priority: 8
+      
+    - slug: kalshi-vs-polymarket
+      title: "Kalshi vs Polymarket: Which Is Better?"
+      status: planned
+      priority: 8
+      
+    - slug: kalshi-promo-code
+      title: "Kalshi Promo Code & Sign-Up Bonus"
+      status: planned
+      priority: 7
+      
+    - slug: polymarket-sign-up
+      title: "How to Sign Up for Polymarket"
+      status: planned
+      priority: 6
+
+  # ─── TOPICAL CONTENT ────────────────────────────────────────
+  # These are generated dynamically by the agent based on market data.
+  # A few evergreen topical pages are pre-planned:
+  markets: []
+  # Agent will populate this section as it creates content

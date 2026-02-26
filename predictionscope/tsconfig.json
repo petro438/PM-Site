@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["site/*"],
+      "@agent/*": ["agent/*"],
+      "@data/*": ["data/*"]
+    }
+  },
+  "include": ["agent/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "site"]
+}

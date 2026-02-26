@@ -1,0 +1,159 @@
+# PredictionScope Seed Keywords
+# These are the initial target keywords the agent should prioritize.
+# Organized by content bucket. Add search volume estimates from Semrush
+# when available to help the agent prioritize.
+
+# ─── EDUCATIONAL (/learn/) ────────────────────────────────────────────
+
+learn:
+  high_priority:
+    - keyword: "what are prediction markets"
+      est_volume: "2400"
+      difficulty: "medium"
+      slug: "what-are-prediction-markets"
+      
+    - keyword: "how do prediction markets work"
+      est_volume: "1600"
+      difficulty: "medium"
+      slug: "how-prediction-markets-work"
+      
+    - keyword: "are prediction markets legal"
+      est_volume: "1000"
+      difficulty: "low"
+      slug: "are-prediction-markets-legal"
+      
+    - keyword: "prediction markets vs polls"
+      est_volume: "800"
+      difficulty: "medium"
+      slug: "prediction-markets-vs-polls"
+      
+    - keyword: "what is kalshi"
+      est_volume: "5400"
+      difficulty: "medium"
+      slug: "what-is-kalshi"
+      
+    - keyword: "what is polymarket"
+      est_volume: "12000"
+      difficulty: "medium"
+      slug: "what-is-polymarket"
+      
+    - keyword: "prediction market taxes"
+      est_volume: "800"
+      difficulty: "low"
+      slug: "prediction-market-taxes"
+
+  medium_priority:
+    - keyword: "how to read prediction market odds"
+      est_volume: "400"
+      difficulty: "low"
+      slug: "how-to-read-prediction-market-odds"
+      
+    - keyword: "prediction markets vs sports betting"
+      est_volume: "300"
+      difficulty: "low"
+      slug: "prediction-markets-vs-sports-betting"
+      
+    - keyword: "CFTC prediction markets"
+      est_volume: "200"
+      difficulty: "low"
+      slug: "cftc-prediction-markets"
+      
+    - keyword: "prediction market strategies"
+      est_volume: "400"
+      difficulty: "low"
+      slug: "prediction-market-strategies"
+      
+    - keyword: "history of prediction markets"
+      est_volume: "200"
+      difficulty: "low"
+      slug: "prediction-markets-history"
+
+    - keyword: "prediction market arbitrage"
+      est_volume: "300"
+      difficulty: "low"
+      slug: "prediction-market-arbitrage"
+
+    - keyword: "polymarket vs kalshi"
+      est_volume: "1200"
+      difficulty: "medium"
+      slug: "polymarket-vs-kalshi"
+
+# ─── TOPICAL (/markets/) ─────────────────────────────────────────────
+
+markets:
+  # These are examples — the agent should generate these dynamically
+  # based on current events and market data
+  
+  evergreen_patterns:
+    - pattern: "[event] prediction market odds"
+      example: "2028 election prediction market odds"
+      
+    - pattern: "[event] odds kalshi"
+      example: "fed rate cut odds kalshi"
+      
+    - pattern: "will [event] happen"
+      example: "will there be a recession 2026"
+      
+    - pattern: "[award show] prediction market"
+      example: "oscars 2027 prediction market"
+      
+    - pattern: "[tv show] prediction market odds"
+      example: "survivor prediction market odds"
+
+  high_volume_topics:
+    - "presidential election odds"
+    - "recession odds"
+    - "fed rate cut odds"
+    - "super bowl odds"
+    - "oscars odds"
+    - "bitcoin price prediction"
+
+# ─── AFFILIATE (/best/) ──────────────────────────────────────────────
+
+best:
+  high_priority:
+    - keyword: "best prediction market apps"
+      est_volume: "800"
+      difficulty: "medium"
+      slug: "prediction-market-apps"
+      
+    - keyword: "kalshi review"
+      est_volume: "1800"
+      difficulty: "medium"
+      slug: "kalshi-review"
+      
+    - keyword: "polymarket review"
+      est_volume: "2400"
+      difficulty: "medium"
+      slug: "polymarket-review"
+      
+    - keyword: "kalshi vs polymarket"
+      est_volume: "1200"
+      difficulty: "medium"
+      slug: "kalshi-vs-polymarket"
+      
+    - keyword: "kalshi promo code"
+      est_volume: "2000"
+      difficulty: "medium"
+      slug: "kalshi-promo-code"
+
+  medium_priority:
+    - keyword: "kalshi sign up bonus"
+      est_volume: "500"
+      difficulty: "low"
+      slug: "kalshi-sign-up-bonus"
+      
+    - keyword: "how to sign up for polymarket"
+      est_volume: "600"
+      difficulty: "low"
+      slug: "polymarket-sign-up"
+      
+    - keyword: "robinhood prediction markets"
+      est_volume: "400"
+      difficulty: "low"
+      slug: "robinhood-prediction-markets"
+      
+    - keyword: "crypto.com predictions"
+      est_volume: "300"
+      difficulty: "low"
+      slug: "crypto-com-prediction-markets"
